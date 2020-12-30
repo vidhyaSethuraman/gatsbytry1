@@ -34,6 +34,8 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
     return
   }
 
+  
+
   const posts = result.data.allMarkdownRemark.nodes
 
   // Create blog posts pages

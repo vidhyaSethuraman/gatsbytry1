@@ -25,8 +25,8 @@ const BlogIndex = ({ data, location }) => {
 
   return (
     <Layout location={location} title={siteTitle}>
-      <SEO title="All posts" />
-      <Bio />
+      
+    
       <ol style={{ listStyle: `none` }}>
         {posts.map(post => {
           const title = post.frontmatter.title || post.fields.slug
@@ -38,6 +38,7 @@ const BlogIndex = ({ data, location }) => {
                 itemScope
                 itemType="http://schema.org/Article"
               >
+                <span>{post.frontmatter.author}</span>
                 <header>
                   <h2>
                     <Link to={post.fields.slug} itemProp="url">
@@ -46,6 +47,7 @@ const BlogIndex = ({ data, location }) => {
                   </h2>
                   <small>{post.frontmatter.date}</small>
                 </header>
+                
                 <section>
                   <p
                     dangerouslySetInnerHTML={{
